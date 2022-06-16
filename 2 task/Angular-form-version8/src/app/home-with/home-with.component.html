@@ -1,0 +1,12 @@
+<form [formGroup]="HomeGroup" (ngSubmit)="submitForm()" novalidate>
+  <div class="c-title"><h3 class="mat-h3"> Pets: Cannot enter a home with a: is required. *</h3></div>
+  <div *ngFor="let dataq of Dataq; let i=index">
+    <mat-checkbox required formControlName="home" [value]="dataq.value" (change)="checkCheckBoxvalue($event)">
+      {{dataq.name}}
+    </mat-checkbox>
+  </div>
+  &nbsp; &nbsp;
+  <mat-error *ngIf="errorHandling('home', 'required')">
+    Pets: Cannot enter a home with a: is required.
+  </mat-error>
+</form>

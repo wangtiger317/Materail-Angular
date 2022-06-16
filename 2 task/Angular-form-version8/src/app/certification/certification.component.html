@@ -1,0 +1,96 @@
+<div class="c-title"><label>Which Certification(s) do you have? *</label></div>
+<!--  <form [formGroup]="form" (ngSubmit)="submitForm()" >-->
+
+<!--    <div *ngFor="let data of Data; let i=index" >-->
+<!--      <label >-->
+<!--        <input type="checkbox" class="mat-checkbox" [value]="data.value" (change)="onCheckboxChange($event)" />-->
+<!--        {{data.name}}-->
+<!--      </label>-->
+
+<!--    </div>-->
+<!--    <div>-->
+<!--      <input type="checkbox" class="mat-checkbox" value="Healthcare attendant (PAB)" (change)="onCheckboxChange($event)" />-->
+<!--      Healthcare attendant (PAB)-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <input type="checkbox" class="mat-checkbox" value="CPR or other" (change)="onCheckboxChange($event)" />-->
+<!--      CPR or other-->
+<!--    </div>-->
+<!--    <div *ngFor="let data of Dataq; let i=index">-->
+<!--      <label >-->
+<!--        <input type="checkbox"  class="mat-checkbox" [value]="data.value" (change)="onCheckboxChange($event)" />-->
+<!--        <input type="text" placeholder="other" />-->
+<!--      </label>-->
+<!--    </div>-->
+
+<!--    <p class="error text-danger" *ngIf="this.form.controls['checkArray'].errors?.required">-->
+<!--      Checkbox is required, select atleast one value.-->
+<!--    </p>-->
+<!--    <div *ngIf="this.form.controls['checkArray'].value[0]">-->
+<!--      <mat-form-field appearance="outline">-->
+<!--        <mat-label>Please list your Nurse certificate no.*</mat-label>-->
+<!--        <input matInput placeholder="" formControlName="Nurse">-->
+<!--        &lt;!&ndash; error &ndash;&gt;-->
+<!--        <mat-error *ngIf="errorHandling('Nurse', 'required')">-->
+<!--          Please list your Nurse certificate no. is required-->
+<!--        </mat-error>-->
+<!--      </mat-form-field>-->
+<!--    </div>-->
+<!--    <div *ngIf="this.form.controls['checkArray'].value[2]">-->
+<!--      <mat-form-field appearance="outline">-->
+<!--        <mat-label>Please provide your Healthcare Attendant certificate no *</mat-label>-->
+<!--        <input matInput  formControlName="Health"/>-->
+<!--        &lt;!&ndash; error &ndash;&gt;-->
+<!--      </mat-form-field>-->
+<!--    </div>-->
+
+<!--    <p>certification:{{form.value |json}}</p>-->
+
+<!--  </form>-->
+<div class="col-md-12">
+  <form [formGroup]="certiform" name="frmFinish">
+    <div class="col-md-12">
+      <mat-checkbox required formControlName="Nurse" [(ngModel)]="showhidepregnant" (change)="checkCheckBoxvalue($event)"> Registered Nurse (RN)
+      </mat-checkbox>
+    </div>
+    <div class="col-md-12">
+      <mat-checkbox required formControlName="Auxiliary_Nurse"  (change)="checkCheckBoxvalue($event)"> Auxiliary Nurse - Nurse
+        assistant
+      </mat-checkbox>
+    </div>
+    <div class="col-md-12">
+      <mat-checkbox required formControlName="Health" [(ngModel)]="showhideHealth" (change)="checkCheckBoxvalue1($event)"> Healthcare attendant (PAB)
+      </mat-checkbox>
+    </div>
+
+    <div class="col-md-12">
+      <mat-checkbox required  (change)="checkCheckBoxvalue2($event)"> CPR or other
+      </mat-checkbox>
+    </div>
+    <div class="col-md-12">
+      <mat-checkbox required formControlName="others" (change)="checkCheckBoxvalue3($event)">
+        <input type="text" placeholder="other" class="mat-form-field-outline"/>
+      </mat-checkbox>
+
+    </div>
+    &nbsp; &nbsp;
+    <div>
+      <mat-form-field appearance="outline" *ngIf="showhidepregnant" [formGroup]="CGcertificationform">
+        <mat-label>Please list your Nurse certificate no.*</mat-label>
+        <input matInput placeholder="" formControlName="CGNurseCertificationNo">
+        <!-- error -->
+        <mat-error *ngIf="errorHandling('Nurse', 'required')">
+          Please list your Nurse certificate no. is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline" *ngIf="showhideHealth" [formGroup]="HealthcareAttendanNoform">
+        <mat-label>Please provide your Healthcare Attendant certificate no *</mat-label>
+        <input matInput formControlName="HealthcareAttendanNo"/>
+        <!-- error -->
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+

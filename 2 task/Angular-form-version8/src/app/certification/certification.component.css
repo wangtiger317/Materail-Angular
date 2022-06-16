@@ -1,0 +1,19 @@
+.mat-checkbox{
+  display: inline-block;
+  height: 16px;
+  line-height: 0;
+  margin: auto;
+  margin-right: 8px;
+  order: 0;
+  position: relative;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 16px;
+  flex-shrink: 0;
+  /*color: rgb(255, 0, 0);*/
+  /*background: rgb(255, 64, 129)*/
+}
+.mat-form-field-outline  {
+  height: 20px;
+  margin-left: 5px;
+}

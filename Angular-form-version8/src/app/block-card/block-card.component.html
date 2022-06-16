@@ -1,0 +1,176 @@
+
+  <div class="loved_one" >
+    <div class="col-md-12" *ngIf="this.isButtonVisible">
+      <div class="love_icon">
+        <button mat-icon-button color="primary" title="Remove Love One "  (click)="remove()" >
+          <mat-icon>cancel</mat-icon>
+        </button>
+        <h2 class="mat-h2">
+          Love One
+        </h2>
+      </div>
+<!--      <div class="love_icon">-->
+<!--        <button mat-icon-button color="primary" title="Remove Love One {{blockData.blockNumber}}"  (click)="remove()" >-->
+<!--          <mat-icon>cancel</mat-icon>-->
+<!--        </button>-->
+<!--        <h2 class="mat-h2">-->
+<!--          Love One {{blockData.blockNumber}}-->
+<!--        </h2>-->
+<!--      </div>-->
+      <div class="col-md-12">
+        <mat-toolbar-row>
+          <h2 class="mat-h2">Loved One Personal Info</h2>
+        </mat-toolbar-row>
+      </div>
+      <div>
+        <div class="col-sm-6" [formGroup]="form">
+          <mat-toolbar-row>
+            <mat-label>Name*</mat-label>
+          </mat-toolbar-row>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="firstName" formControlName="firstName">
+            <!-- error -->
+            <mat-error *ngIf="errorHandling4('firstName', 'required')">
+              You must provide a &nbsp; <strong>firstName</strong>
+            </mat-error>
+          </mat-form-field>
+          &nbsp;
+        </div>
+        <div class="col-sm-6" [formGroup]="form">
+          <mat-toolbar-row>
+            <mat-label>&nbsp;</mat-label>
+          </mat-toolbar-row>
+          <mat-form-field appearance="outline">
+            <mat-label></mat-label>
+            <input matInput placeholder="lastName" formControlName="lastName">
+            <!-- error -->
+            <mat-error *ngIf="errorHandling4('lastName', 'required')">
+              You must provide a &nbsp; <strong>lastName</strong>
+            </mat-error>
+          </mat-form-field>
+          &nbsp;
+        </div>
+      </div>
+      <div>
+        <div class="col-sm-6" >
+          <mat-toolbar-row>
+            <mat-label>Email</mat-label>
+          </mat-toolbar-row>
+          <mat-form-field appearance="outline" [formGroup]="BlockFormGroup">
+            <input matInput placeholder="" formControlName="email">
+            <mat-error *ngIf="errorHandling2('email', 'required')">
+              Email is required.
+            </mat-error>
+          </mat-form-field>
+          &nbsp;
+        </div>
+        <div class="col-sm-6" >
+          <mat-toolbar-row>
+            <mat-label>Phone *</mat-label>
+          </mat-toolbar-row>
+          <mat-form-field appearance="outline" [formGroup]="BlockFormGroup">
+            <input matInput placeholder="Phone" formControlName="phone">
+            <!-- error -->
+            <mat-error *ngIf="errorHandling2('phone', 'required')">
+              Phone is required.
+            </mat-error>
+          </mat-form-field>
+          &nbsp;
+        </div>
+      </div>
+      <div class="col-sm-12"  >
+        <mat-toolbar-row>
+          <mat-label>Address*</mat-label>
+        </mat-toolbar-row>
+        <mat-form-field appearance="outline" [formGroup]="BlockFormGroup">
+          <input matInput placeholder="Address Line 1" formControlName="Address">
+          <!-- error -->
+          <mat-error *ngIf="errorHandling2('Address', 'required')">
+            Address Line 1 are required.
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-12" >
+        <mat-form-field appearance="outline">
+          <mat-label></mat-label>
+          <input matInput placeholder="Address Line 2">
+        </mat-form-field>
+      </div>
+      <div>
+        <div class="col-sm-6" [formGroup]="BlockFormGroup">
+          <mat-form-field appearance="outline">
+            <mat-label></mat-label>
+            <input matInput placeholder="City" formControlName="City">
+            <!-- error -->
+            <mat-error *ngIf="errorHandling2('City', 'required')">
+              City Line 1 are required.
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6" [formGroup]="BlockFormGroup">
+          <mat-form-field appearance="outline">
+            <mat-label></mat-label>
+            <input matInput placeholder="State/Province/Region" formControlName="State">
+            <!-- error -->
+            <mat-error *ngIf="errorHandling2('State', 'required')">
+              State/Province/Region are required.
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-sm-6" [formGroup]="BlockFormGroup">
+        <mat-form-field appearance="outline">
+          <mat-label></mat-label>
+          <input matInput placeholder="Postal/Zip Code" formControlName="Postal">
+          <!-- error -->
+          <mat-error *ngIf="errorHandling2('Postal', 'required')">
+            Postal/Zip Code are required.
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6" [formGroup]="BlockFormGroup">
+        <mat-form-field appearance="outline">
+          <mat-label>Country</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let Country of Country" [value]="Country.value">
+              {{Country.viewValue}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="selectFormControl.hasError('required')"> Country are required.</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6" [formGroup]="BlockFormGroup">
+        <mat-label>Upload file</mat-label>
+        <form [formGroup]="BlockFormGroup" novalidate (ngSubmit)="Formsubmit()">
+          <!--              <input type="file"  (change)="onFileChange($event)"/>-->
+          <!--              <button type="submit" mat-flat-button color="primary" >upload</button>-->
+          <app-file-upload formControlName="image" [secondFormGroup]="BlockFormGroup"></app-file-upload>
+
+        </form>
+      </div>
+      <div class="col-sm-6">
+        <mat-form-field [formGroup]="BlockFormGroup">
+          <input matInput readonly [matDatepicker]="picker" placeholder="Date of birth" formControlName="dob"
+                 (dateChange)="date($event)">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-md-12">
+        <mat-toolbar-row>
+          <h1 class="mat-h1">Needs and Level of Autonomy </h1>
+          <h2 class="mat-h2">Level of Autonomy *</h2>
+          <p>Please rate the degree of autonomy where 1=requires no help up to 5=requires full assistance.</p>
+        </mat-toolbar-row>
+      </div>
+      <app-table [secondFormGroup]="BlockFormGroup"></app-table>
+      <app-limitation [secondFormGroup]="BlockFormGroup"></app-limitation>
+      <app-routine [secondFormGroup]="BlockFormGroup"></app-routine>
+      <app-emergency [secondFormGroup]="BlockFormGroup" (dblclick)="data($event)">final</app-emergency>
+<!--      <button type="submit">dddd</button>-->
+<!--      {{this.BlockFormGroup.value |json}}-->
+    </div>
+  </div>
+<!--<button mat-flat-button color="primary" type="submit" >submit</button>-->
+
+

@@ -1,0 +1,106 @@
+<!--<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">-->
+<!--  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}-->
+<!--</button>-->
+<div class="container">
+  <div class="row">
+    <mat-horizontal-stepper linear #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <mat-toolbar-row>
+          <p>User Code</p>
+          <p>1000</p>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+          <h1>Care Seeker Information</h1>
+          <p>This section is for your personal information as Care Seeker. The section immediately below is where you
+            will fill in the information on the Loved One(s) for which you require services.</p>
+
+        </mat-toolbar-row>
+        <form [formGroup]="firstFormGroup" (ngSubmit)="submitForm()">
+          <ng-template matStepLabel>Care Seeker Information</ng-template>
+          <div>
+            <div class="col-sm-6" [formGroup]="form">
+              <mat-form-field appearance="outline" >
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="firstName" formControlName="firstName" required>
+                <!-- error -->
+                <mat-error *ngIf="errorHandling1('firstName', 'required')">
+                  You must provide a &nbsp; <strong>firstName</strong>
+                </mat-error>
+              </mat-form-field>
+              &nbsp;
+            </div>
+            <div class="col-sm-6" [formGroup]="form">
+              <mat-form-field appearance="outline">
+                <mat-label></mat-label>
+                <input matInput placeholder="lastName" formControlName="lastName">
+                <!-- error -->
+                <mat-error *ngIf="errorHandling1('lastName', 'required')">
+                  You must provide a &nbsp; <strong>lastName</strong>
+                </mat-error>
+              </mat-form-field>
+              &nbsp;
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <mat-form-field appearance="outline">
+              <mat-label>Cell Phone *</mat-label>
+              <input matInput placeholder="Phone" formControlName="phone">
+              <!-- error -->
+              <mat-error *ngIf="errorHandling('phone', 'required')">
+                Cell Phone is required.
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-12 F_Next button-wrapper">
+            <button  mat-flat-button color="primary" matStepperNext>Next</button>
+          </div>
+          <div>
+          </div>
+        </form>
+        <div class="F_pagination">
+          <div class="c-page-numbering">1 / 2</div>
+        </div>
+        <!--        <p>Form status: {{ firstFormGroup.value | json }}</p>-->
+
+      </mat-step>
+
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup" >
+          <mat-toolbar-row>
+            <h1>Loved One(s) Passport(s)</h1>
+            <p>The "Loved One Passport" is where you document who your loved one is and what her/his condition is. It is
+              accessible only to you but you will want to share it with the caregivers of your choice so that they care
+              for you loved one(s) the way you want them to.</p>
+            <p>
+              It's important to update this passport when the Loved One's situation changes (example, they had surgery,
+              lost their dentures, new hearing aid, etc.)
+            </p>
+          </mat-toolbar-row>
+          <ng-template matStepLabel>Care Seeker InformationLoved One(s) Passport(s)</ng-template>
+
+          <div class="col-md-12" >
+<!--            <app-block-card [message]="parentMessage"></app-block-card>-->
+            <app-block-card></app-block-card>
+
+          </div>
+          <div class="col-md-12">
+            <app-block-card *ngFor="let block of blocks"  [blockData]="block" #fred  (AddData)="update($event)">
+            </app-block-card>
+            <button mat-flat-button color="primary" (click)="addCard()">+ Add Loved One</button>
+          </div>
+          &nbsp;&nbsp;
+          <div class="col-md-12">
+            <button mat-flat-button color="primary" matStepperPrevious>Back</button>
+            &nbsp; &nbsp; &nbsp;
+            <button mat-flat-button color="primary" type="submit" (click)="submit()">submit</button>
+          </div>
+        </form>
+        <div class="F_pagination">
+          <div class="c-page-numbering">2 / 2</div>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+<!--    <p>Form value: {{ secondFormGroup.value | json }}</p>-->
+
+  </div>
+</div>

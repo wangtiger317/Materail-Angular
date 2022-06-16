@@ -1,0 +1,39 @@
+  <form [formGroup]="form" (ngSubmit)="submitForm()" novalidate>
+    <div *ngFor="let item of Data; let i=index">
+      <label>
+        <input type="checkbox" [value]="item.value"  class="mat-checkbox" (change)="onCheckboxChange($event)"/>
+<!--        <mat-checkbox  required   [value]="item.value"  (change)="onCheckboxChange($event)"> {{item.name}} </mat-checkbox>-->
+        {{item.name}}
+      </label>
+
+    </div>
+    <mat-error *ngIf="errorHandling('checkArray', 'required')">
+      Services, skills and special qualifications is required.
+    </mat-error>
+    <p>
+      * Medication administration requires RN certification
+    </p>
+    <p>
+      **Hygiene requires PAB / Healthcare Attendant certification
+    </p>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Do you have a healthcare or social certification? *</mat-label>
+      <mat-select   #someHashName>
+        <mat-option value="No">No</mat-option>
+        <mat-option value="YES">YES</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="form-group" *ngIf="someHashName?.value == 'YES'">
+      <div class="col-md-12 mt-3" >
+        <app-certification></app-certification>
+      </div>
+    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>Please provide your other certification no.</mat-label>
+      <input matInput placeholder="" />
+    </mat-form-field>
+    <app-language></app-language>
+
+  </form>
+

@@ -1,0 +1,93 @@
+h1{
+  text-align: -webkit-center;
+  text-align: center;
+}
+.c-progress-section {
+  padding: 11px 8px 8px;
+  overflow: auto;
+  line-height: normal;
+}
+.c-progress-steps ol {
+  position: relative;
+  padding: 0!important;
+  display: flex;
+}
+.c-forms-progress ol {
+  counter-reset: mycounter;
+  list-style: none;
+  margin: 0;
+  clear: both;
+  padding: 0;
+}
+ .c-forms-form .c-forms-progress li.c-page-selected a:before {
+  background-color: rgb(147, 198, 239);
+  color: rgb(255, 255, 255);
+  border-color: rgb(147, 198, 239);
+}
+
+.c-progress-steps  a:before{
+  content: counter(mycounter);
+  counter-increment: mycounter;
+  display: inline-flex;
+  justify-content: center;
+  vertical-align: middle;
+  font-size: .8em;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  border-radius: 50%;
+  border-width: 1px;
+  border-style: solid;
+  background-color: rgb(255, 255, 255);
+}
+ .c-progress-steps  a {
+  display: inline-block;
+  font-weight: bold!important;
+}
+.c-progress-steps  span {
+  padding-left: .5em;
+  vertical-align: middle;
+  color: rgb(64, 57, 57);
+}
+.user_code{
+  width: 100%;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.c-label{
+  position: relative;
+  margin-bottom: 30px;
+}
+.c-title{
+  font-weight: bold;
+}
+.c-helptext {
+  padding: 5px 0px -1px 8px;
+  clear: left;
+  margin: 0;
+}
+.c-action{
+  float: left;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+.c-action button{
+  width: 100px;
+
+}
+.c-page-numbering{
+  font-family: Arial,Helvetica,sans-serif;
+  font-weight: normal;
+  font-size: 0.8125em;
+  color: rgb(0, 0, 0);
+  float: right;
+  margin-top: 12px;
+  padding: 8px;
+  margin-right: 18px;
+}
+.mt-9{
+  margin-top: 20px;
+}
+.options{
+  width: 100%;
+}

@@ -1,0 +1,18 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="outline">
+    <mat-label>Please list your Nurse certificate no.*</mat-label>
+    <input matInput placeholder="" formControlName="Nurse">
+    <!-- error -->
+    <mat-error *ngIf="errorHandling('Nurse', 'required')">
+      Please list your Nurse certificate no. is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Please provide your Healthcare Attendant certificate no *</mat-label>
+    <input matInput placeholder="" formControlName="Healthcare">
+    <!-- error -->
+    <mat-error *ngIf="errorHandling('Healthcare', 'required')">
+      Please provide your Healthcare Attendant certificate no. is required.
+    </mat-error>
+  </mat-form-field>
+</form>

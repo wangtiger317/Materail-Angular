@@ -1,0 +1,83 @@
+
+<mat-toolbar-row>
+  <h1>Caregiver Registration</h1>
+</mat-toolbar-row>
+<app-stepper-overview-example></app-stepper-overview-example>
+<!--<mat-sidenav-container cols="2">-->
+<!--  <mat-sidenav-content>-->
+
+<!--    <form [formGroup]="myForm" (ngSubmit)="submitForm()" novalidate>-->
+
+<!--      &lt;!&ndash; Name &ndash;&gt;-->
+<!--      <mat-form-field>-->
+<!--        <mat-label>Name*</mat-label>-->
+<!--        <input matInput placeholder="firstName" formControlName="firstName">-->
+<!--        &lt;!&ndash; error &ndash;&gt;-->
+<!--        <mat-error *ngIf="errorHandling('firstName', 'required')">-->
+<!--          You must provide a &nbsp; <strong>firstName</strong>-->
+<!--        </mat-error>-->
+<!--      </mat-form-field>-->
+<!--      <mat-form-field>-->
+<!--        <mat-label></mat-label>-->
+<!--        <input matInput placeholder="lastName" formControlName="lastName">-->
+<!--        &lt;!&ndash; error &ndash;&gt;-->
+<!--        <mat-error *ngIf="errorHandling('lastName', 'required')">-->
+<!--          You must provide a &nbsp; <strong>lastName</strong>-->
+<!--        </mat-error>-->
+<!--      </mat-form-field>-->
+<!--      &lt;!&ndash; Email &ndash;&gt;-->
+<!--      <mat-form-field class="example-full-width">-->
+<!--        <input matInput placeholder="Email" formControlName="email">-->
+<!--        <mat-error *ngIf="errorHandling('email', 'required')">-->
+<!--          You must provide a &nbsp; <strong>email</strong>-->
+<!--        </mat-error>-->
+<!--      </mat-form-field>-->
+
+<!--      &lt;!&ndash; Gender &ndash;&gt;-->
+<!--      <div class="misc-bottom-padding">-->
+<!--        <mat-label>Gender:</mat-label>-->
+<!--        <mat-radio-group aria-label="Select an option" formControlName="gender">-->
+<!--          <mat-radio-button value="Male">Male</mat-radio-button>-->
+<!--          <mat-radio-button value="Female">Female</mat-radio-button>-->
+<!--        </mat-radio-group>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Date picker &ndash;&gt;-->
+<!--      <mat-form-field>-->
+<!--        <input matInput readonly [matDatepicker]="picker" placeholder="Date of birth" formControlName="dob"-->
+<!--               (dateChange)="date($event)">-->
+<!--        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+<!--        <mat-datepicker #picker></mat-datepicker>-->
+<!--      </mat-form-field>-->
+
+<!--      &lt;!&ndash; Class &ndash;&gt;-->
+<!--&lt;!&ndash;      <mat-form-field>&ndash;&gt;-->
+<!--&lt;!&ndash;        <mat-label>Grade</mat-label>&ndash;&gt;-->
+<!--&lt;!&ndash;        <mat-select [(value)]="selected" formControlName="grade">&ndash;&gt;-->
+<!--&lt;!&ndash;          <mat-option [value]="gradeArray" *ngFor="let gradeArray of GradeArray">{{gradeArray}}&ndash;&gt;-->
+<!--&lt;!&ndash;          </mat-option>&ndash;&gt;-->
+<!--&lt;!&ndash;        </mat-select>&ndash;&gt;-->
+<!--&lt;!&ndash;      </mat-form-field>&ndash;&gt;-->
+
+<!--      &lt;!&ndash; Add Subjects &ndash;&gt;-->
+<!--&lt;!&ndash;      <mat-form-field class="multiple-items">&ndash;&gt;-->
+<!--&lt;!&ndash;        <mat-chip-list #chipList>&ndash;&gt;-->
+<!--&lt;!&ndash;          <mat-chip *ngFor="let subjectsArray of SubjectsArray" [selectable]="selectable" [removable]="removable"&ndash;&gt;-->
+<!--&lt;!&ndash;                    (removed)="remove(subjectsArray)">&ndash;&gt;-->
+<!--&lt;!&ndash;            {{subjectsArray.name}}&ndash;&gt;-->
+<!--&lt;!&ndash;            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>&ndash;&gt;-->
+<!--&lt;!&ndash;          </mat-chip>&ndash;&gt;-->
+<!--&lt;!&ndash;          <input placeholder="Add subjects" [matChipInputFor]="chipList"&ndash;&gt;-->
+<!--&lt;!&ndash;                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"&ndash;&gt;-->
+<!--&lt;!&ndash;                 (matChipInputTokenEnd)="add($event)">&ndash;&gt;-->
+<!--&lt;!&ndash;        </mat-chip-list>&ndash;&gt;-->
+<!--&lt;!&ndash;      </mat-form-field>&ndash;&gt;-->
+
+<!--      &lt;!&ndash; Submit &ndash;&gt;-->
+<!--      <div class="button-wrapper">-->
+<!--        <button mat-flat-button color="primary">next</button>-->
+<!--      </div>-->
+
+<!--    </form>-->
+<!--  </mat-sidenav-content>-->
+<!--</mat-sidenav-container>-->

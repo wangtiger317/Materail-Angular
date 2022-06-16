@@ -1,0 +1,10 @@
+<h1 class="mat-h1">Exception Neighbourhood {{blockData.blockNumber}}</h1>
+<mat-label>Area or neighbourhood</mat-label>
+  <div [formGroup]="Blockform">
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Please write the name of the area:  i.e. Golden mile" formControlName="neighbourhood" (change)="changeInput()"
+             required>
+    </mat-form-field>
+  </div>
+<p>formdata:{{this.Blockform.value |json}}</p>
+

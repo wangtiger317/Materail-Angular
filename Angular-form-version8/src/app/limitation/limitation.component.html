@@ -1,0 +1,125 @@
+<form [formGroup]="CheckBoxFormGroup" (ngSubmit)="submit()">
+  <div class="col-md-12">
+    <mat-toolbar-row>
+      <h2 class="mat-h2">Limitations and sensitivities (to the best of your knowledge) required *</h2>
+    </mat-toolbar-row>
+    <div class="col-md-12">
+      <div class="col-md-6">
+        <div *ngFor="let item of Data; let i=index" [formGroup]="CheckBoxFormGroup">
+          <label>
+            <input type="checkbox" [value]="item.value" class="mat-checkbox" (change)="onCheckboxChange($event)"/>
+            {{item.name}}
+          </label>
+
+        </div>
+        <div [formGroup]="form">
+          <input type="checkbox" value="Surgery*" formControlName="surgeries" class="mat-checkbox" [(ngModel)]="Surgery"
+                 (change)="onCheckboxChange($event)"/>
+          Surgery*
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div *ngFor="let item of data; let i=index">
+          <label>
+            <input type="checkbox" [value]="item.value" class="mat-checkbox" (change)="onCheckboxChange($event)"/>
+            {{item.name}}
+          </label>
+        </div>
+        <div [formGroup]="form">
+
+          <input type="checkbox" value="Physical weaknesses*" formControlName="weaknesses" class="mat-checkbox"
+                 [(ngModel)]="weaknesses" (change)="onCheckboxChange($event)"/>
+          Physical weaknesses*
+        </div>
+      </div>
+
+    </div>
+    &nbsp;&nbsp;
+    <div class="col-md-12">
+      <mat-error *ngIf="errorHandling('checkArray', 'required')">
+        Services, skills and special qualifications is required.
+      </mat-error>
+    </div>
+    <div class="col-md-12" *ngIf="Surgery">
+      <mat-toolbar-row>
+        <h2 class="mat-h2">Which surgery/surgeries should the CG care for or be aware of? *</h2>
+      </mat-toolbar-row>
+      <mat-form-field appearance="outline" [formGroup]="form">
+      <textarea matInput placeholder="" formControlName="surgery">
+      </textarea>
+        <!--      <mat-error *ngIf="errorHandling('surgeries', 'required')">-->
+        <!--        Which surgery/surgeries should the CG care for or be aware of? is required..-->
+        <!--      </mat-error>-->
+      </mat-form-field>
+    </div>
+    <div class="col-md-12" *ngIf="weaknesses">
+      <mat-toolbar-row>
+        <h2 class="mat-h2">What type of physical weaknesses should the CG be mindful of? *</h2>
+      </mat-toolbar-row>
+      <mat-form-field appearance="outline" [formGroup]="form">
+      <textarea matInput formControlName="weak"></textarea>
+      </mat-form-field>
+    </div>
+
+
+<!--    <p>Form status: {{ CheckBoxFormGroup.value | json }}</p>-->
+
+    <mat-toolbar-row>
+      <h2 class="mat-h2">Equipment / Aids *</h2>
+    </mat-toolbar-row>
+    <div class="col-md-6" [formGroup]="form">
+      <div *ngFor="let item of Edata; let i=index">
+        <label>
+          <input type="checkbox" [value]="item.value" formControlName="Equipment" class="mat-checkbox" (change)="onCheckboxChange($event)"/>
+          {{item.name}}
+        </label>
+      </div>
+      <div *ngFor="let data of Dataqq; let i=index" >
+        <label>
+          <input type="checkbox" class="mat-checkbox" [value]="data.value" (change)="onCheckboxChange($event)"/>
+          {{data.name}}
+          <input type="text" formControlName="others_aids" placeholder="other"/>
+        </label>
+      </div>
+    </div>
+    <div class="col-md-6" [formGroup]="form">
+      <div *ngFor="let item1 of Dataq; let i=index">
+        <label>
+          <input type="checkbox" formControlName="Aids" [value]="item1.value" class="mat-checkbox" (change)="onCheckboxChange($event)"/>
+          {{item1.name}}
+        </label>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <mat-toolbar-row>
+        <h1 class="mat-h1">Routine, Habits and Temperament</h1>
+        <h3 class="mat-h3">Favourite things</h3>
+      </mat-toolbar-row>
+    </div>
+    <div class="col-md-6" >
+
+        <div *ngFor="let data of EEE; let i=index" [formGroup]="form">
+          <label>
+            <input type="checkbox" formControlName="Routine" class="mat-checkbox" [value]="data.value" (change)="onCheckboxChange($event)"/>
+            {{data.name}}
+          </label>
+        </div>
+        <div *ngFor="let data of FFF; let i=index" [formGroup]="form">
+          <label>
+            <input type="checkbox" formControlName="Habits_others" class="mat-checkbox" [value]="data.value" (change)="onCheckboxChange($event)"/>
+            <input type="text" placeholder="other"/>
+          </label>
+        </div>
+        <mat-error *ngIf="errorHandling('checkArray', 'required')">
+          Services, skills and special qualifications is required.
+        </mat-error>
+<!--      <p>Form status: {{ CheckBoxFormGroup.value | json }}</p>-->
+
+    </div>
+  </div>
+
+</form>
+
+
+
+

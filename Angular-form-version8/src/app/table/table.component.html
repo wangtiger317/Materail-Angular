@@ -1,0 +1,96 @@
+<div class="col-md-12">
+  <div class="col-md-9">
+    <mat-label>Are you willing to go to a smoker's house? *</mat-label>
+  </div>
+  <div class="col-md-3">
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1"></mat-radio-button>
+      <mat-radio-button value="2"></mat-radio-button>
+      <mat-radio-button value="3"></mat-radio-button>
+      <mat-radio-button value="4"></mat-radio-button>
+      <mat-radio-button value="5"></mat-radio-button>
+    </mat-radio-group>
+  </div>
+</div>
+<div class="col-md-12">
+  <div class="col-md-9">
+    <mat-label>Preparing meals *</mat-label>
+  </div>
+
+  <div class="col-md-3" >
+    <mat-radio-group aria-label="Select an option" required [(ngModel)]="radioOptions1" name="radioButtons1"
+                     (change)="onChange($event)">
+      <mat-radio-button *ngFor="let season of seasons" [value]="season" ></mat-radio-button>
+    </mat-radio-group>
+  </div>
+</div>
+<div class="col-md-12">
+  <div class="col-md-9">
+    <mat-label>Eating *</mat-label>
+  </div>
+  <div class="col-md-3"  >
+    <mat-radio-group aria-label="Select an option" required [(ngModel)]="radioOptions2" name="radioButtons2"
+                     (change)="onChange($event)">
+      <mat-radio-button *ngFor="let season of seasons1" [value]="season" ></mat-radio-button>
+
+    </mat-radio-group>
+  </div>
+</div>
+<div class="col-md-12">
+  <div class="col-md-9">
+    <mat-label>Basic Hygiene (getting dressed, toilet) *</mat-label>
+  </div>
+  <div class="col-md-3" >
+
+    <mat-radio-group aria-label="Select an option" required [(ngModel)]="radioOptions3" name="radioButtons3"
+                     (change)="onChange($event)">
+      <mat-radio-button *ngFor="let season of seasons2" [value]="season" ></mat-radio-button>
+
+    </mat-radio-group>
+  </div>
+</div>
+<div class="col-md-12">
+  <div class="col-md-9">
+    <mat-label>Bath/shower *</mat-label>
+  </div>
+  <div class="col-md-3" >
+
+    <mat-radio-group aria-label="Select an option" required [(ngModel)]="radioOptions4" name="radioButtons4"
+                     (change)="onChange($event)">
+      <mat-radio-button *ngFor="let season of seasons3" [value]="season" ></mat-radio-button>
+
+    </mat-radio-group>
+  </div>
+</div>
+<div class="col-md-12">
+  <div class="col-md-9">
+    <mat-label>Walking/mobility *</mat-label>
+  </div>
+  <div class="col-md-3" >
+
+    <mat-radio-group aria-label="Select an option" required [(ngModel)]="radioOptions5" name="radioButtons5"
+                     (change)="onChange($event)">
+      <mat-radio-button *ngFor="let season of seasons4" [value]="season" ></mat-radio-button>
+
+    </mat-radio-group>
+  </div>
+</div>
+<div class="col-md-12">
+  <div class="col-md-9">
+    <mat-label>Running errands, groceries*</mat-label>
+  </div>
+  <div class="col-md-3" >
+
+    <mat-radio-group aria-label="Select an option" required [(ngModel)]="radioOptions" name="radioButtons6"
+                     (change)="onChange($event)">
+      <mat-radio-button *ngFor="let season of seasons5" [value]="season" ></mat-radio-button>
+
+    </mat-radio-group>
+  </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+<div class="col-md-12">
+  <div class="c-title"><h3 class="mat-h3"> Special Interests is required. *</h3></div>
+  <form [formGroup]="specailform" (ngSubmit)="submitForm()" novalidate>
+    <div *ngFor="let data of Data; let i=index">
+        <mat-checkbox required formControlName="speic" (change)="checkCheckBoxvalue($event)">
+          {{data.name}}
+        </mat-checkbox>
+    </div>
+    &nbsp; &nbsp;
+    <mat-error *ngIf="errorHandling('speic', 'required')">
+      Special Interests is required.
+    </mat-error>
+    <app-home-with></app-home-with>
+  </form>
+</div>
+
+

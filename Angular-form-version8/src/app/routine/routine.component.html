@@ -1,0 +1,45 @@
+<div class="col-md-12">
+  <mat-toolbar-row>
+    <h2 class="mat-h2">Temperament</h2>
+  </mat-toolbar-row>
+  <div class="col-md-12">
+    <mat-form-field appearance="outline" [formGroup]="RFormGroup">
+      <textarea matInput placeholder="Temperament" formControlName="textarea"></textarea>
+    </mat-form-field>
+  </div>
+  <div class="col-md-12">
+  <mat-toolbar-row>
+    <p>
+      This area is used to describe your loved one. Are there certain triggers to be aware of, topics of conversation to
+      avoid or include, any sensitivities to consider? The do’s and don’ts... This area will allow the caregiver to
+      better
+      understand the person receiving the care and allow them to provide the best possible and comfortable care.
+    </p>
+  </mat-toolbar-row>
+  </div>
+  &nbsp;
+  <mat-toolbar-row>
+    <h2 class="mat-h2">Notes / Special requests</h2>
+  </mat-toolbar-row>
+  <div class="col-md-12">
+    <mat-form-field appearance="outline" [formGroup]="RFormGroup">
+      <textarea matInput placeholder="" formControlName="textarea1"></textarea>
+    </mat-form-field>
+  </div>
+  <div class="col-md-12">
+
+  <mat-toolbar-row>
+    <p>
+      This area includes any special requests that may be needed while the caregiver is in service. Example of this
+      would
+      be to follow up on the contents in the fridge (ie is there bread or milk, to observing a mood or awareness level.
+      Please note that the CG will try to the best of their abilities. Also note that this is just a basic inquiry and
+      not
+      a medical evaluation.
+    </p>
+  </mat-toolbar-row>
+  </div>
+
+</div>
+<p>Form status: {{ RFormGroup.value | json }}</p>
+

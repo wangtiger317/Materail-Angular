@@ -1,0 +1,13 @@
+.service_Area{
+  margin-top: 20px;
+}
+.mt-9{
+  position: relative;
+  margin-top: 30px;
+}
+.back{
+  margin-right: 20px;
+}
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}

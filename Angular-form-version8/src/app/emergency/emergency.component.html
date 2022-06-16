@@ -1,0 +1,98 @@
+<div class="col-md-12">
+
+  <mat-toolbar-row>
+    <h2 class="mat-h2">In Case of Emergency</h2>
+    <p>
+      *Please provide at least one contact person that will be available while services are being provided.
+    </p>
+  </mat-toolbar-row>
+  <form [formGroup]="EmergnecyGroup" (ngSubmit)="onSubmit()">
+    <div class="col-md-12">
+      <div class="col-md-8 mb-3">
+        <mat-label>Family member #1</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="First Name Last name" formControlName="family_member1"/>
+        </mat-form-field>
+
+      </div>
+      <div class="col-md-4 mb-3">
+        <mat-label>Phone</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="phone1"/>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-8 mb-3">
+        <mat-label>Family member #2</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="First Name Last name" formControlName="family_member2">
+        </mat-form-field>
+      </div>
+      <div class="col-md-4 mb-3">
+        <mat-label>Phone</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="phone2"/>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-8 mb-3">
+        <mat-label>Friend or Neighbour #1</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="First Name Last name" formControlName="friend1">
+        </mat-form-field>
+      </div>
+      <div class="col-md-4 mb-3">
+        <mat-label>Phone</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="phone3">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-8 mb-3">
+        <mat-label>Friend or Neighbour #2</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="First Name Last name" formControlName="friend2"/>
+        </mat-form-field>
+      </div>
+      <div class="col-md-4 mb-3">
+        <mat-label>Phone</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="phone4"/>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-8 mb-3">
+        <mat-label>Pharmacy</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="First Name Last name" formControlName="pharmacy"/>
+        </mat-form-field>
+      </div>
+      <div class="col-md-4 mb-3">
+        <mat-label>Phone</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="phone5"/>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-8 mb-3">
+        <mat-label>Medical (Doctor)</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="First Name Last name" formControlName="doctor"/>
+        </mat-form-field>
+      </div>
+      <div class="col-md-4 mb-3">
+        <mat-label>Phone</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="phone6"/>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!--<p>Form status: {{ EmergnecyGroup.value | json }}</p>-->

@@ -1,0 +1,24 @@
+<div class="col-md-12">
+  <div class="c-title"><h3>What languages do you speak? *</h3></div>
+  <form [formGroup]="languageGroup" (ngSubmit)="submitForm()" novalidate>
+    <div class="col-md-12">
+      <div *ngFor="let data of language; let i=index" class="col-md-6">
+        <label>
+          <input type="checkbox" class="mat-checkbox"  [value]="data.value" (change)="onCheckboxChange($event)"/>
+          {{data.name}}
+        </label>
+      </div>
+      <div *ngFor="let data of language1; let i=index" class="col-md-6">
+        <label>
+          <input type="checkbox" class="mat-checkbox" [value]="data.value" (change)="onCheckboxChange($event)"/>
+          {{data.name}}
+        </label>
+      </div>
+    </div>
+
+    <p class="error text-danger" *ngIf="this.languageGroup.controls['checkArray'].errors?.required">
+      What languages do you speak? is required.
+    </p>
+
+  </form>
+</div>
